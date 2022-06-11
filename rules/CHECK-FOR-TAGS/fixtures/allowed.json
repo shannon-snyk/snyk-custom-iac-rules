@@ -1,0 +1,14 @@
+{
+  "resource" : {
+      "aws_s3_bucket": {
+          "denied": {
+              "acl": "private", 
+              "bucket": "my-tutorial-bucket",
+              "tags": {
+                  "Team": "rocket"
+              }
+          }
+      }
+  }
+}
+

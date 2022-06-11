@@ -1,0 +1,21 @@
+{
+  "Resources" : {
+    "DataEngResidentDevopsRoleDataEngAdmin7ACC27C0": {
+        "Type": "AWS::IAM::ManagedPolicy",
+        "Properties": {
+            "PolicyDocument": {
+                "Statement": [
+                    {
+                        "Action": [
+                            "dynamodb:DescribeLimits"
+                        ],
+                        "Effect": "Allow",
+                        "Resource": "*",
+                        "Sid": "DataEngPolicy"
+                    }
+                ]
+            }
+        }
+    }
+}
+}

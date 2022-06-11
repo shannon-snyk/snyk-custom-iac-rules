@@ -1,0 +1,54 @@
+{
+  "Resources": {
+    "HeartbeatResidentDevopsRoleHeartbeatDevopsRole8D5B3994": {
+        "Type": "AWS::IAM::Role",
+        "Properties": {
+                    "PolicyDocument": {
+                        "Statement": [
+                            {
+                                "Action": [
+                                    "sqs:CreateQueue"
+                                ],
+                                "Effect": "Allow",
+                                "Resource": [
+                                    {
+                                        "Fn::Join": [
+                                            "",
+                                            [
+                                                "arn:aws:sqs:",
+                                                {
+                                                    "Ref": "AWS::Region"
+                                                },
+                                                ":",
+                                                {
+                                                    "Ref": "AWS::AccountId"
+                                                },
+                                                ":*heartbeat*"
+                                            ]
+                                        ]
+                                    },
+                                    {
+                                        "Fn::Join": [
+                                            "",
+                                            [
+                                                "arn:aws:sqs:",
+                                                {
+                                                    "Ref": "AWS::Region"
+                                                },
+                                                ":",
+                                                {
+                                                    "Ref": "AWS::AccountId"
+                                                },
+                                                ":*beatbox*"
+                                            ]
+                                        ]
+                                    }
+                                ],
+                                "Sid": "SQSAdminAccess"
+                            }
+                        ]
+                    }
+                }
+            }
+        }
+}     
